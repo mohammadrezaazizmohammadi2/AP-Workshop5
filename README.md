@@ -2,8 +2,6 @@
 
 ## Heap & Stack Memory Diagram
 
-During the execution of `AUTMath.multiply(4, 5)`, the memory state is as follows:
-
 ```mermaid
 graph TB
     subgraph Stack["Stack"]
@@ -21,8 +19,6 @@ graph TB
     end
 
     Frame1 -.->|reference| Arr
-```
-
 ### Explanation:
 
 - **Primitive types (`int`)** are stored directly in the **Stack**.
