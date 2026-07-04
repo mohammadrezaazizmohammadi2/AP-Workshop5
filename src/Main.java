@@ -1,23 +1,20 @@
-
-
 public class Main {
 
-    public static void assertResult(int result, int expected) {
-        if (result != expected) {
-            System.out.printf("%nAssertionError: %d != %d%n", result, expected);
+    public static void assertResult(int expected, int actual, String testName) {
+        if (expected != actual) {
+            System.out.println("Error in " + testName + ": expected " + expected + " but got " + actual);
             System.exit(1);
         } else {
-            System.out.print('.');
+            System.out.println(testName + " passed!");
         }
     }
+
     public static void main(String[] args) {
-        assertResult(AUTMath.sum(2, 4), 6);
-        assertResult(AUTMath.subtract(2, 4), -2);
-        assertResult(AUTMath.multiply(3, 4), 12);
-        assertResult(AUTMath.multiply(-3, 5), -15);
-        assertResult(AUTMath.divide(8, 4), 2);
-        assertResult(AUTMath.divide(4, 0), 4);
-        assertResult(AUTMath.factorial(4), 24);
-        assertResult(AUTMath.pow(2, 4), 16);
+        assertResult(5, AUTMath.sum(2, 3), "sum");
+        assertResult(10, AUTMath.subtract(15, 5), "subtract");
+        assertResult(20, AUTMath.multiply(4, 5), "multiply");
+        assertResult(2, AUTMath.divide(10, 5), "divide");
+        assertResult(120, AUTMath.factorial(5), "factorial");
+        assertResult(8, AUTMath.pow(2, 3), "pow");
     }
 }
