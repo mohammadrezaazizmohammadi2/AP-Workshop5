@@ -1,21 +1,16 @@
-# AP Workshop 5 - Debugging Exercise
+# AP Workshop 5 - Memory Diagram
 
-## Heap & Stack Memory Diagram
+## Garbage Collector (Page 6)
+
+In Java, the Garbage Collector automatically removes objects that have no references pointing to them. This prevents memory leaks.
+
+---
+
+## Stack (Page 7)
 
 ```mermaid
 graph TB
     subgraph Stack["Stack"]
         direction TB
-        Frame3["Frame: multiply<br>num1 = 4<br>num2 = 5"]
-        Frame2["Frame: assertResult<br>expected = 20<br>actual = 20<br>testName = 'multiply'"]
-        Frame1["Frame: main<br>args = (address of array)"]
-        
-        Frame3 --> Frame2
-        Frame2 --> Frame1
+        Frame1["Frame: main"]
     end
-
-    subgraph Heap["Heap"]
-        Arr["String[] args<br>(input array)"]
-    end
-
-    Frame1 -.->|reference| Arr
